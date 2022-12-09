@@ -46,10 +46,14 @@ const planets = [
   },
 ];
 let planetsDiv = document.getElementById("planets");
+planetsDiv.style.width = "90%";
+planetsDiv.style.display = "flex";
+
 for (let i = 0; i < planets.length; i++) {
   let planetdiv = document.createElement("div");
 
   planetdiv.style.marginBottom = "10px";
+  planetdiv.style.width = "200px";
 
   let planetName = document.createElement("p");
   planetName.textContent = planets[i].name.toUpperCase();
@@ -79,7 +83,7 @@ let calculateWeight = () => {
     let weight = document.getElementById("pltweight" + i);
     let weightonearth = document.getElementById("weight");
     console.log(weightonearth.value);
-    weight.value = +weightonearth.value * planets[i].gravity;
+    weight.value = (+weightonearth.value * planets[i].gravity).toFixed(2);
   }
 };
 document
